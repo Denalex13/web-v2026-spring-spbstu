@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>lab1 - Подтверждение</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="dialog">
+    <h3>Подтверждение</h3>
+    <p>Вы действительно хотите удалить этот файл?</p>
+    <button id="okBtn">OK</button>
+    <button id="cancelBtn">Отмена</button>
+</div>
+
+<script>
+    document.getElementById('okBtn').onclick = function() {
+        alert('Действие подтверждено');
+    };
+    document.getElementById('cancelBtn').onclick = function() {
+        alert('Действие отменено');
+    };
+</script>
+
+</body>
+</html>
