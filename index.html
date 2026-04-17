@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Channel Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <h1>Менеджер каналов</h1>
+
+    <!-- Блок с формами -->
+    <div class="forms">
+        <!-- Форма создания канала -->
+        <div class="form-group">
+            <h3>Создать канал</h3>
+            <input type="text" id="channelName" placeholder="Название канала">
+            <button id="createChannelBtn">Создать канал</button>
+        </div>
+
+        <!-- Форма добавления подписчика (глобальная) -->
+        <div class="form-group">
+            <h3>Добавить подписчика (к выбранному каналу)</h3>
+            <input type="text" id="globalSubName" placeholder="Имя подписчика">
+            <select id="channelSelectForSub">
+                <option value="">-- Выберите канал --</option>
+            </select>
+            <button id="addSubGlobalBtn">Добавить подписчика</button>
+        </div>
+
+        <!-- Форма удаления канала -->
+        <div class="form-group">
+            <h3>Удалить канал</h3>
+            <select id="deleteChannelSelect">
+                <option value="">-- Выберите канал --</option>
+            </select>
+            <button id="deleteChannelBtn" class="danger">Удалить канал</button>
+        </div>
+    </div>
+
+    <!-- Панель статистики -->
+    <div class="stats" id="statsPanel"></div>
+
+    <!-- Контейнер для карточек каналов -->
+    <div id="channelsContainer" class="channels"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
