@@ -1,0 +1,137 @@
+:root {
+    --bg-color: #f4efe6;
+    --card-color: #fffdf8;
+    --text-color: #2f241f;
+    --muted-color: #6f6259;
+    --accent-color: #9b5c2e;
+    --accent-hover: #7d471f;
+    --border-color: #e7d9cc;
+    --shadow: 0 18px 45px rgba(91, 59, 34, 0.12);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+    background:
+        radial-gradient(circle at top left, rgba(220, 188, 150, 0.35), transparent 30%),
+        linear-gradient(180deg, #f9f4ec 0%, var(--bg-color) 100%);
+    min-height: 100vh;
+}
+
+#root {
+    min-height: 100vh;
+}
+
+.page {
+    width: min(1120px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 48px 0 56px;
+}
+
+.hero {
+    margin-bottom: 28px;
+}
+
+.hero__title {
+    margin: 0 0 12px;
+    font-size: clamp(32px, 5vw, 52px);
+    line-height: 1.05;
+}
+
+.hero__text {
+    margin: 0;
+    max-width: 760px;
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--muted-color);
+}
+
+.books-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.book-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--card-color);
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.book-card__cover {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    display: block;
+}
+
+.book-card__content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 22px;
+}
+
+.book-card__title {
+    margin: 0;
+    font-size: 26px;
+    line-height: 1.15;
+}
+
+.book-card__description {
+    overflow: hidden;
+    transition: max-height 0.45s ease;
+}
+
+.book-card__description-text {
+    margin: 0;
+    line-height: 1.75;
+    color: var(--muted-color);
+}
+
+.book-card__button {
+    align-self: flex-start;
+    padding: 11px 18px;
+    border: none;
+    border-radius: 999px;
+    background: var(--accent-color);
+    color: #fff;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.book-card__button:hover {
+    background: var(--accent-hover);
+    transform: translateY(-1px);
+}
+
+.book-card__button:focus-visible {
+    outline: 3px solid rgba(155, 92, 46, 0.25);
+    outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+    .page {
+        padding-top: 28px;
+        padding-bottom: 36px;
+    }
+
+    .book-card__content {
+        padding: 18px;
+    }
+
+    .hero__text {
+        font-size: 16px;
+    }
+}
