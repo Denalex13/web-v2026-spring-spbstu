@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>lab2 - RGB to HEX</title>
+</head>
+<body>
+    <h2>RGB → HEX конвертер</h2>
+    <p>Результаты в консоли (F12 → Console)</p>
+
+    <script>
+        function rgbToHex(rgb) {
+            // Извлекаем все числа из строки
+            const numbers = rgb.match(/\d+/g);
+            
+            // Проверка на ошибки
+            if (!numbers || numbers.length < 3) {
+                return 'Ошибка: неверный формат';
+            }
+            
+            // Проходим по каждому числу и преобразуем в HEX
+            const hexParts = numbers.map(function(num) {
+                const intNum = parseInt(num);
+                const hexNum = intNum.toString(16);
+                const paddedHex = hexNum.padStart(2, '0');
+                return paddedHex;
+            });
+            
+            // Склеиваем результат
+            return '#' + hexParts.join('');
+        }
+
+        // Тесты в правильном порядке
+        console.log('=== РЕЗУЛЬТАТЫ КОНВЕРТАЦИИ RGB → HEX ===');
+        console.log('Красный:  rgb(255,0,0)     →', rgbToHex("rgb(255,0,0)"));
+        console.log('Зеленый:  rgb(0,255,0)     →', rgbToHex("rgb(0,255,0)"));
+        console.log('Синий:    rgb(0,0,255)     →', rgbToHex("rgb(0,0,255)"));
+        console.log('Желтый:   rgb(255,255,0)   →', rgbToHex("rgb(255,255,0)"));
+        console.log('Черный:   rgb(0,0,0)       →', rgbToHex("rgb(0,0,0)"));
+        console.log('Белый:    rgb(255,255,255) →', rgbToHex("rgb(255,255,255)"));
+    </script>
+</body>
+</html>
