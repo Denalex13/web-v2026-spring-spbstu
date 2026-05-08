@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gadget Hub</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <button class="logo" data-route="home" aria-label="Gadget Hub">
+          <span class="logo-mark">GH</span>
+          <span>Gadget Hub</span>
+        </button>
+        <nav class="nav">
+          <button class="nav-link" data-route="catalog">
+            <img src="assets/images/icons/catalog.svg" alt="" />
+            Каталог
+          </button>
+          <button class="nav-link cart-link hidden" data-route="cart">
+            <span class="cart-icon-wrap">
+              <img src="assets/images/icons/card.svg" alt="" />
+              <span class="cart-count hidden">0</span>
+            </span>
+            Корзина
+          </button>
+          <button class="nav-link auth-link" data-route="login">
+            <img src="assets/images/icons/profile.svg" alt="" />
+            <span class="auth-text">Войти</span>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main id="app"></main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div>
+          <strong>Gadget Hub</strong>
+          <p>+7 812 555-18-20<br />+7 921 555-24-42</p>
+        </div>
+        <div class="socials">
+          <a href="#" aria-label="VK"><img src="assets/images/social/vk.png" alt="" /></a>
+          <a href="#" aria-label="Telegram"><img src="assets/images/social/telegram.png" alt="" /></a>
+          <a href="#" aria-label="WhatsApp"><img src="assets/images/social/whatsapp.png" alt="" /></a>
+        </div>
+      </div>
+    </footer>
+
+    <div id="modal-root"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
